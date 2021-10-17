@@ -1,0 +1,146 @@
+{
+    "commands": [
+        {
+            "command": "SET <key> <value>",
+            "description": "Sets a key-value pair",
+            "comments": [
+                "EX <expiration in seconds> or PX <expiration in MS> is used to set the TTL of the object"
+            ]
+        },
+        {
+            "command": "GET <key>",
+            "description": "Gets a value by key"
+        },
+        {
+            "command": "KEYS *",
+            "description": "Gets all the existing keys"
+        },
+        {
+            "command": "DEL <key>",
+            "description": "Deletes a key"
+        },
+        {
+            "command": "INCR <key>",
+            "description": "Increments a value by 1"
+        },
+        {
+            "command": "DBSIZE",
+            "description": "Gets number of existing keys"
+        },
+        {
+            "command": "MSET <key #1> <value #1>... <key #n> <value #n>",
+            "description": "Sets multiple key-value pairs at once"
+        },
+        {
+            "command": "MGET <key #1> ... <key #n>",
+            "description": "Gets multiple values at once"
+        },
+        {
+            "command": "EXISTS <key #1> ... <key #n>",
+            "description": "Checks whether the keys exist in the DB"
+        },
+        {
+            "command": "EXPIRE <key> <expiration in seconds>",
+            "description": "Sets the TTL of the object"
+        },
+        {
+            "command": "PERSIST <key>",
+            "description": "Resets the TTL of the object, should never expire"
+        },
+        {
+            "command": "FLUSHALL",
+            "description": "Clears the DB"
+        },
+        {
+            "command": "LPUSH <key> <val #1>... <val #n>",
+            "description": "Pushes values on the left (top) of the list",
+            "comments": [
+                "Creates the list if does not exist"
+            ]
+        },
+        {
+            "command": "RPUSH <key> <val #1>... <val #n>",
+            "description": "Pushes values on the right (bottom) of the list",
+            "comments": [
+                "Creates the list if does not exist"
+            ]
+        },
+        {
+            "command": "LPOP <key>",
+            "description": "Pops the most left (top) value in the list"
+        },
+        {
+            "command": "RPOP <key>",
+            "description": "Pops the most right (bottom) value in the list"
+        },
+        {
+            "command": "LRANGE <key> <start index> <end index>",
+            "description": "Gets values of a list from start index to end index",
+            "comments": [
+                "first index is 0 and last is -1",
+                "end offset by decreasing -1. -2 is the second from the end, etc."
+            ]
+        },
+        {
+            "command": "LLEN <key>",
+            "description": "Gets the length of a list"
+        },
+        {
+            "command": "LTRIM <key> <start index> <end index>",
+            "description": "Removes all the values from the list except for the given range"
+        },
+        {
+            "command": "HSET <key> <key #1> <value #1> ... <key #n> <value #n>",
+            "description": "Adds the given key-value pairs to an hash table",
+            "comments": [
+                "Creates the hash set if does not exist"
+            ]
+        },
+        {
+            "command": "HGET <hash set key> <item key>",
+            "description": "Gets the value of the given key in the given hash table"
+        },
+        {
+            "command": "HMGET <hash set key> <item key #1> ... <item key #n>",
+            "description": "Gets the values of all the given keys in the given hash table"
+        },
+        {
+            "command": "SADD <set key> <value #1> ... <value #n>",
+            "description": "Adds the given values to the given set",
+            "comments": [
+                "Creates the set if does not exist"
+            ]
+        },
+        {
+            "command": "SCARD <set key>",
+            "description": "Gets the count of the values in the given set"
+        },
+        {
+            "command": "SMEMBERS <set key>",
+            "description": "Gets all the values in the given set"
+        },
+        {
+            "command": "SDIFF <set key #1> <set key #2>",
+            "description": "Gets the values that exist in set #1 but don't exist in set #2"
+        },
+        {
+            "command": "SISMEMBER <set key> <value>",
+            "description": "Checks whether the given value exists in the given set"
+        },
+        {
+            "command": "SMOVE <source set key> <target set key> <value>",
+            "description": "Moves the given value from the source set to the target set",
+            "comments": [
+                "Creates the target set if does not exist"
+            ]
+        },
+        {
+            "command": "SPOP <set key> <number of keys to pop, 1 by default>",
+            "description": "Pops members from the set, randomly"
+        },
+        {
+            "command": "SREM <set key> <value #1> ... <value #n>",
+            "description": "Removes the given values from the given set"
+        }
+    ]
+}
